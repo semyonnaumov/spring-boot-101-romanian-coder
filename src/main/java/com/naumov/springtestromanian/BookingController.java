@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@RestController // means this class will serve data to the client (transfer app's state through this data - REST)
 @RequestMapping(value = "/bookings")
 public class BookingController {
     private BookingRepository bookingRepository;
