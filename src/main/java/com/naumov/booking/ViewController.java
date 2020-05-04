@@ -1,4 +1,4 @@
-package com.naumov.springtestromanian;
+package com.naumov.booking;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

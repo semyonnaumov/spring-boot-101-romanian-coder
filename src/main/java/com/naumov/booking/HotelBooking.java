@@ -1,4 +1,4 @@
-package com.naumov.springtestromanian;
+package com.naumov.booking;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

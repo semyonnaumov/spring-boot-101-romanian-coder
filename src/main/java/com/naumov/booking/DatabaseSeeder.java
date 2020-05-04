@@ -1,4 +1,4 @@
-package com.naumov.springtestromanian;
+package com.naumov.booking;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
