@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.naumov</groupId>
-	<artifactId>spring-test-romanian</artifactId>
+	<artifactId>spring-boot-101-romanian-coder</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-test-romanian</name>
-	<description>Test project on "romanian coder's" Tutorial</description>
+	<name>spring-boot-101-romanian-coder</name>
+	<description>Test project on "Romanian Coder's" Tutorial</description>
 
 	<properties>
 		<java.version>11</java.version>
