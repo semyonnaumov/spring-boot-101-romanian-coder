@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @RestController
 @RequestMapping(value = "/bookings")
@@ -29,7 +31,8 @@ public class BookingController {
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     @ApiMethod(description = "Get all bookings from the database")
     public List<HotelBooking>  getAll() {
-        return bookingRepository.findAll();
+        return StreamSupport.stream(bookingRepository.findAll().spliterator(), false)
+                        .collect(Collectors.toList());
     }
 
     @RequestMapping(value = "/affordable/{p}", method = RequestMethod.GET)
@@ -42,13 +45,15 @@ public class BookingController {
     @ApiMethod(description = "Create a hotel booking and save it in the DB")
     public List<HotelBooking> create(@RequestBody HotelBooking newBooking) {
         bookingRepository.save(newBooking);
-        return bookingRepository.findAll();
+        return StreamSupport.stream(bookingRepository.findAll().spliterator(), false)
+                .collect(Collectors.toList());
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ApiMethod(description = "Remove the hotel booking from the DB")
     public List<HotelBooking> remove(@ApiPathParam(name = "id") @PathVariable long id) {
         bookingRepository.deleteById(id);
-        return  bookingRepository.findAll();
+        return StreamSupport.stream(bookingRepository.findAll().spliterator(), false)
+                .collect(Collectors.toList());
     }
 }

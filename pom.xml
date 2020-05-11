@@ -20,7 +20,6 @@
 
 	<dependencies>
 		<!-- Main Spring Boot dependency -->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -45,11 +44,12 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
-		<!-- Devtools for hot swap/ live reload -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
+<!--		&lt;!&ndash; Devtools for hot swap / live reload &ndash;&gt;-->
+<!--		&lt;!&ndash; Make sure you set up your IntelliJ Idea properly! &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-devtools</artifactId>-->
+<!--		</dependency>-->
 
 		<!-- JSONDoc for API documentation and testing -->
 		<dependency>
