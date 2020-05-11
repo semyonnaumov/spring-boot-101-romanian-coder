@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8"/>
-    <title>Hotel Booking app</title>
+    <title>Hotel Booking App</title>
     <!--
         An href attribute tells where to look for bootstrap when running index.html directly (useful for designers)
         This will not work on a server since the path is different to our local path.
@@ -10,77 +10,9 @@
     -->
     <link th:if="${mode == 'development'}" rel="stylesheet" href="../static/bootstrap.css" th:href="@{/bootstrap.css}"/>
     <link th:if="${mode == 'production'}" rel="stylesheet" href="../static/bootstrap.min.css" th:href="@{/bootstrap.min.css}"/>
-    <script type="text/javascript" src="../static/angular.min.js" th:src="@{https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js}"></script>
-    <script type="text/javascript" src="../static/app/app.module.js" th:src="@{/app/app.module.js}"></script>
-    <script type="text/javascript" src="../static/app/bookings.controller.js" th:src="@{/app/bookings.controller.js}"></script>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <a class="navbar-brand" href="#">Booking</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">One <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Two</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Three</a>
-            </li>
-          </ul>
-          <span class="navbar-text navbar-right" th:text="'Signed in as ' + ${username}">
-                    Signed in as Anonymous
-                </span>
-        </div>
-      </nav>
-    </header>
-    <div>
-      <div class="row">
-        <div class="col-lg-offset-2 col-lg-8">
-
-          <!--Toggle between all bookings and affordable bookings-->
-          <div class="btn-group" role="group">
-            <button ng-click="vm.getAll()" type="button" class="btn btn-secondary">All</button>
-            <button ng-click="vm.getAffordable()" type="button" class="btn btn-secondary">Less than 100$</button>
-          </div>
-
-          <!--Display bookings in a table-->
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Hotel</th>
-                <th>Nights</th>
-                <th>Price/Night</th>
-                <th>Total Price</th>
-                <th style="width: 90px"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="booking in vm.bookings">
-                <td>{{booking.hotelName}}</td>
-                <td>{{booking.nbOfNights}}</td>
-                <td>{{booking.pricePerNight}}</td>
-                <td>{{booking.totalPrice}}</td>
-                <td>
-                  <button class="btn btn-danger" ng-click="count = count + 1" ng-init="count=0">{{count}}</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-      Hello Bootstrap!
-    <footer class="footer mt-auto py-3">
-      <div class="container">
-        <span class="text-muted" th:text="'Page was rendered ' + ${#dates.format(datetime, 'HH:mm dd.MM.yyyy')}">Page was rendered today</span>
-      </div>
-    </footer>
+<!--<span class="navbar-text navbar-right" th:text="'Signed in as ' + ${username}">Signed in as Anonymous</span>-->
+<!--<span class="text-muted" th:text="'Page was rendered ' + ${#dates.format(datetime, 'HH:mm dd.MM.yyyy')}">Page was rendered today</span>-->
   </body>
 </html>
