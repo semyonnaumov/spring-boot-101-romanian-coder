@@ -31,6 +31,12 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
+		<!-- Provides a fast way to build hypermedia-powered repositories -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+
 		<!-- Database -->
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -44,8 +50,8 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
-<!--		&lt;!&ndash; Devtools for hot swap / live reload &ndash;&gt;-->
-<!--		&lt;!&ndash; Make sure you set up your IntelliJ Idea properly! &ndash;&gt;-->
+		<!-- Devtools for hot swap / live reload -->
+		<!-- Make sure you set up your IntelliJ Idea properly! -->
 <!--		<dependency>-->
 <!--			<groupId>org.springframework.boot</groupId>-->
 <!--			<artifactId>spring-boot-devtools</artifactId>-->
@@ -80,6 +86,7 @@
 	<build>
 		<plugins>
 			<plugin>
+				<!-- Plugin to look for the versions automatically -->
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
