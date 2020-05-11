@@ -1,4 +1,4 @@
-package com.naumov.booking;
+package com.naumov.booking.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,10 +15,7 @@ public class HotelBooking {
     private double pricePerNight;
     private int nbOfNights;
 
-    /*
-        Default constructor must exist for Spring to be able to instantiate this class when receiving
-        json and trying to deserialize it into this class via @ResponseBody annotation
-    */
+    // JPA needs this
     public HotelBooking(){
     }
 

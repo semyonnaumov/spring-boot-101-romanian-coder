@@ -1,5 +1,7 @@
-package com.naumov.booking;
+package com.naumov.booking.controller;
 
+import com.naumov.booking.jpa.BookingRepository;
+import com.naumov.booking.model.HotelBooking;
 import org.jsondoc.core.annotation.Api;
 import org.jsondoc.core.annotation.ApiMethod;
 import org.jsondoc.core.annotation.ApiPathParam;
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController // means this class will serve data to the client (transfer app's state through this data - REST)
+@RestController
 @RequestMapping(value = "/bookings")
 @Api(
         name = "Hotel booking API",
@@ -32,8 +34,7 @@ public class BookingController {
 
     @RequestMapping(value = "/affordable/{p}", method = RequestMethod.GET)
     @ApiMethod(description = "Get all affordable bookings from the database")
-    public List<HotelBooking>  getAffordable(@ApiPathParam(name = "price") @PathVariable(required = true, name = "p") double price) {
-        // name property in @PathVariable is optional when variable name equals name in curly braces {p}
+    public List<HotelBooking>  getAffordable(@ApiPathParam(name = "price") @PathVariable(name = "p") double price) {
         return bookingRepository.findByPricePerNightLessThan(price);
     }
 

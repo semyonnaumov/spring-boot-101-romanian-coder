@@ -1,5 +1,7 @@
 package com.naumov.booking;
 
+import com.naumov.booking.jpa.BookingRepository;
+import com.naumov.booking.model.HotelBooking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
@@ -9,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-@Order(0) // Optional, this is for ordering multiple command runners' method 'run' starts
 public class DatabaseSeeder implements CommandLineRunner {
     private BookingRepository bookingRepository;
 
